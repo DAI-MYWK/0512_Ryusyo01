@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NewsPicks - Services</title>
+    <style>
+      /* Reset and Base Styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Helvetica Neue", Arial, sans-serif;
+      }
+
+      body {
+        color: #333;
+        line-height: 1.6;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* Header Styles */
+      header {
+        padding: 20px 0;
+        border-bottom: 1px solid #eee;
+      }
+
+      .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        width: 120px;
+      }
+
+      .nav-menu {
+        display: flex;
+        list-style: none;
+      }
+
+      .nav-menu li {
+        margin-left: 30px;
+        font-size: 14px;
+      }
+
+      /* Main Content Styles */
+      .page-title {
+        text-align: center;
+        margin: 60px 0 30px;
+        font-size: 32px;
+        font-weight: bold;
+      }
+
+      .title-underline {
+        display: block;
+        width: 40px;
+        height: 3px;
+        background-color: #333;
+        margin: 20px auto 60px;
+      }
+
+      .service-category {
+        margin: 80px 0;
+      }
+
+      .category-title {
+        font-size: 24px;
+        margin-bottom: 40px;
+      }
+
+      .service-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 60px;
+      }
+
+      .service-item:nth-child(even) {
+        flex-direction: row-reverse;
+      }
+
+      .service-content {
+        width: 48%;
+      }
+
+      .service-image {
+        width: 48%;
+        text-align: center;
+      }
+
+      .service-title {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 15px;
+      }
+
+      .service-description {
+        font-size: 14px;
+        line-height: 1.8;
+      }
+
+      .orange-button {
+        display: inline-block;
+        background-color: #ff6b00;
+        color: white;
+        padding: 8px 20px;
+        border-radius: 4px;
+        margin-top: 15px;
+        font-size: 14px;
+      }
+
+      .platform-section {
+        margin: 100px 0;
+      }
+
+      .platform-title {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 30px;
+      }
+
+      .platform-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .platform-text {
+        width: 60%;
+        font-size: 14px;
+        line-height: 1.8;
+      }
+
+      .platform-image {
+        width: 35%;
+      }
+
+      /* Footer Styles */
+      footer {
+        background-color: #222;
+        color: white;
+        padding: 60px 0 30px;
+      }
+
+      .footer-container {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 40px;
+      }
+
+      .footer-column {
+        width: 30%;
+      }
+
+      .footer-title {
+        font-size: 16px;
+        margin-bottom: 20px;
+      }
+
+      .footer-links {
+        list-style: none;
+      }
+
+      .footer-links li {
+        margin-bottom: 10px;
+        font-size: 14px;
+      }
+
+      .footer-logo {
+        width: 120px;
+        margin-bottom: 30px;
+      }
+
+      .social-icons {
+        display: flex;
+        list-style: none;
+        margin-bottom: 30px;
+      }
+
+      .social-icons li {
+        margin-right: 15px;
+      }
+
+      .copyright {
+        text-align: center;
+        font-size: 12px;
+        color: #999;
+        padding-top: 20px;
+        border-top: 1px solid #444;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="container header-container">
+        <div class="logo">
+          <a href="/">
+            <svg viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M20,0 L40,20 L20,40 L0,20 L20,0 Z M20,10 L30,20 L20,30 L10,20 L20,10 Z"
+                fill="#000"
+              />
+              <text
+                x="45"
+                y="25"
+                font-family="Arial"
+                font-size="14"
+                font-weight="bold"
+              >
+                NEWSPICKS
+              </text>
+            </svg>
+          </a>
+        </div>
+        <ul class="nav-menu">
+          <li><a href="#">Top</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Information</a></li>
+          <li><a href="#">Company</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Recruit</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+      <div class="container">
+        <h1 class="page-title">Services</h1>
+        <span class="title-underline"></span>
+
+        <!-- Individual Services Section -->
+        <section class="service-category">
+          <h2 class="category-title">個人向けサービス</h2>
+          <p>
+            NewsPicksは経済の共有価値のために、世界中の多くの人が集まるコミュニティとなるためのサービスを提供。「NewsPicks」の提供を基本として、ビジネス教育やその他多様な価値を届けています。
+          </p>
+
+          <div class="service-item">
+            <div class="service-content">
+              <h3 class="service-title">NewsPicks</h3>
+              <p class="service-description">
+                ソーシャル経済メディア＆ビジネス英語・AI英語のオンラインスクール・コミュニケーション、オリジナル記事・動画を提供しています。
+              </p>
+            </div>
+            <div class="service-image">
+              <svg viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M20,0 L40,20 L20,40 L0,20 L20,0 Z M20,10 L30,20 L20,30 L10,20 L20,10 Z"
+                  fill="#000"
+                />
+                <text
+                  x="45"
+                  y="25"
+                  font-family="Arial"
+                  font-size="14"
+                  font-weight="bold"
+                >
+                  NEWSPICKS
+                </text>
+              </svg>
+            </div>
+          </div>
+
+          <div class="service-item">
+            <div class="service-content">
+              <h3 class="service-title">NewsPicks Publishing</h3>
+              <p class="service-description">
+                NewsPicksが発刊している、「大人に、新しい「問い」を。」をコンセプトにしたビジネスパーソン向けの書籍です。
+              </p>
+            </div>
+            <div class="service-image">
+              <img
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/corp.newspicks.com_service.png-nXKetyqIuajnT66GQKkwQhWO2BuwMx.jpeg"
+                alt="Publishing service image"
+                style="max-height: 150px; object-fit: cover"
+              />
+            </div>
+          </div>
+
+          <div class="service-item">
+            <div class="service-content">
+              <h3 class="service-title">NewsPicks for Kids</h3>
+              <p class="service-description">
+                NewsPicksのコンテンツを、子ども（小学生）向けに編集・開発した教材です。「The
+                News for Parents」として提供しています。
+              </p>
+            </div>
+            <div class="service-image">
+              <img
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/corp.newspicks.com_service.png-nXKetyqIuajnT66GQKkwQhWO2BuwMx.jpeg"
+                alt="Kids service image"
+                style="max-height: 150px; object-fit: cover"
+              />
+            </div>
+          </div>
+
+          <div class="service-item">
+            <div class="service-content">
+              <h3 class="service-title">NewsPicks NewSchool</h3>
+              <p class="service-description">
+                NewsPicksが提供する、ビジネスパーソン向けの学びの場。知の探求の場として、いつでも学べる、初心者から上級者まで幅広く学べるようになっています。新たな学びを得たい方に、新たな学びを提供しています。
+              </p>
+            </div>
+            <div class="service-image">
+              <svg viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M20,0 L40,20 L20,40 L0,20 L20,0 Z M20,10 L30,20 L20,30 L10,20 L20,10 Z"
+                  fill="#000"
+                />
+              </svg>
+            </div>
+          </div>
+        </section>
+
+        <!-- Business Services Section -->
+        <section class="service-category">
+          <h2 class="category-title">企業向けサービス</h2>
+          <p>
+            企業の課題解決のためのソリューションを提供。企業の広報・IR活動、組織開発、マーケティングなどに、DXの観点からアプローチを提案しています。
+          </p>
+
+          <div class="service-item">
+            <div class="service-content">
+              <h3 class="service-title">NewsPicks 法人グループ</h3>
+              <p class="service-description">
+                ビジネスパーソン向けメディア・記事・学習環境を提供するNewsPicksの法人向けサービスです。個人の学びやデータ分析など...
+              </p>
+            </div>
+            <div class="service-image">
+              <img
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/corp.newspicks.com_service.png-nXKetyqIuajnT66GQKkwQhWO2BuwMx.jpeg"
+                alt="Business group image"
+                style="max-height: 150px; object-fit: cover"
+              />
+            </div>
+          </div>
+
+          <div class="service-item">
+            <div class="service-content">
+              <h3 class="service-title">NewsPicks Learning</h3>
+              <p class="service-description">
+                ビジネスパーソン向けに「学ぶ」を支援するプラットフォーム。ビジネスに必要な知識の習得から、スキルアップまで、様々な学びを提供しています。学習管理システムとコンテンツの両方を提供しています。
+              </p>
+            </div>
+            <div class="service-image">
+              <img
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/corp.newspicks.com_service.png-nXKetyqIuajnT66GQKkwQhWO2BuwMx.jpeg"
+                alt="Learning service image"
+                style="max-height: 150px; object-fit: cover"
+              />
+            </div>
+          </div>
+
+          <div class="service-item">
+            <div class="service-content">
+              <h3 class="service-title">NewsPicks Enterprise</h3>
+              <p class="service-description">
+                NewsPicksが大企業向けに開発したプラットフォーム。企業内コミュニケーションを活性化します。
+              </p>
+            </div>
+            <div class="service-image">
+              <img
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/corp.newspicks.com_service.png-nXKetyqIuajnT66GQKkwQhWO2BuwMx.jpeg"
+                alt="Enterprise service image"
+                style="max-height: 150px; object-fit: cover"
+              />
+            </div>
+          </div>
+        </section>
+
+        <!-- Platform Section -->
+        <section class="platform-section">
+          <h2 class="platform-title">
+            NewsPicksのプラットフォームを活用したブランディング支援
+          </h2>
+          <div class="platform-content">
+            <div class="platform-text">
+              <p>
+                国内外を問わずメディアを展開する「NewsPicks」を中心に、企業のブランディングを支援するサービスを提供しています。NewsPicksの持つ独自のコミュニティとコンテンツ力を活かし、企業のブランディング、マーケティング、採用活動などを支援。企業の魅力を最大限に引き出し、ターゲットに届けるためのコンテンツプロデュースを行います。
+              </p>
+            </div>
+            <div class="platform-image">
+              <img
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/corp.newspicks.com_service.png-nXKetyqIuajnT66GQKkwQhWO2BuwMx.jpeg"
+                alt="Branding support image"
+                style="max-height: 200px; object-fit: cover"
+              />
+            </div>
+          </div>
+        </section>
+
+        <!-- Media Section -->
+        <section class="platform-section">
+          <h2 class="platform-title">
+            メディアの取材を活かした企業主体のコミュニケーション・コンテンツ制作支援
+          </h2>
+          <div class="platform-content">
+            <div class="platform-text">
+              <p>
+                お客様企業の課題・目標に合わせたコンテンツ制作を支援。NewsPicksの持つ取材力・編集力を活かし、企業の魅力を最大限に引き出すコンテンツを制作します。記事、動画、ポッドキャスト、イベントなど、様々な形式でのコンテンツ制作が可能です。
+              </p>
+            </div>
+            <div class="platform-image">
+              <img
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/corp.newspicks.com_service.png-nXKetyqIuajnT66GQKkwQhWO2BuwMx.jpeg"
+                alt="Media content support image"
+                style="max-height: 200px; object-fit: cover"
+              />
+            </div>
+          </div>
+        </section>
+
+        <!-- Internal Branding Section -->
+        <section class="platform-section">
+          <h2 class="platform-title">
+            組織活性化・社内改革のためのインターナルブランディング支援
+          </h2>
+          <div class="platform-content">
+            <div class="platform-text">
+              <p>
+                人的資源管理・パーパス経営の実現、コーポレートカルチャーの醸成のための、組織改革、風土、人事制度、採用、人材育成など、企業の内部に向けたブランディング活動を支援します。NewsPicksの持つコミュニティとコンテンツ力を活かし、企業の内部改革を支援します。
+              </p>
+            </div>
+            <div class="platform-image">
+              <img
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/corp.newspicks.com_service.png-nXKetyqIuajnT66GQKkwQhWO2BuwMx.jpeg"
+                alt="Internal branding image"
+                style="max-height: 200px; object-fit: cover"
+              />
+            </div>
+          </div>
+        </section>
+
+        <!-- Other Services Section -->
+        <section class="service-category">
+          <h2 class="category-title">その他サービス</h2>
+          <p>
+            他にも、NewsPicksは様々なサービスを提供しています。NewsPicksのエコシステムを活用した様々なサービスを提供しています。
+          </p>
+
+          <div class="service-item">
+            <div class="service-content">
+              <h3 class="service-title">NewsPicks Education</h3>
+              <p class="service-description">
+                学校教育向けにNewsPicksを活用し、先生方と一緒にニュースを学び、学生のメディアリテラシー、クリティカルシンキング、情報活用能力を育みます。
+              </p>
+            </div>
+            <div class="service-image">
+              <img
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/corp.newspicks.com_service.png-nXKetyqIuajnT66GQKkwQhWO2BuwMx.jpeg"
+                alt="Education service image"
+                style="max-height: 150px; object-fit: cover"
+              />
+            </div>
+          </div>
+
+          <div class="service-item">
+            <div class="service-content">
+              <h3 class="service-title">NewsPicks Expert</h3>
+              <p class="service-description">
+                専門家向けのNewsPicksのコンテンツとスマートプラットフォーム。クライアントのDXの観点から、専門家の知見を活用したサービスを提供しています。
+              </p>
+            </div>
+            <div class="service-image">
+              <svg viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M20,0 L40,20 L20,40 L0,20 L20,0 Z M20,10 L30,20 L20,30 L10,20 L20,10 Z"
+                  fill="#000"
+                />
+                <text
+                  x="45"
+                  y="25"
+                  font-family="Arial"
+                  font-size="14"
+                  font-weight="bold"
+                >
+                  EXPERT
+                </text>
+              </svg>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-container">
+          <div class="footer-column">
+            <div class="footer-logo">
+              <svg viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M20,0 L40,20 L20,40 L0,20 L20,0 Z M20,10 L30,20 L20,30 L10,20 L20,10 Z"
+                  fill="#fff"
+                />
+                <text
+                  x="45"
+                  y="25"
+                  font-family="Arial"
+                  font-size="14"
+                  font-weight="bold"
+                  fill="#fff"
+                >
+                  NEWSPICKS
+                </text>
+              </svg>
+            </div>
+            <ul class="social-icons">
+              <li>
+                <a href="#"><span>X</span></a>
+              </li>
+              <li>
+                <a href="#"><span>FB</span></a>
+              </li>
+              <li>
+                <a href="#"><span>IG</span></a>
+              </li>
+              <li>
+                <a href="#"><span>YT</span></a>
+              </li>
+              <li>
+                <a href="#"><span>LI</span></a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3 class="footer-title">個人向けサービス</h3>
+            <ul class="footer-links">
+              <li><a href="#">NewsPicks</a></li>
+              <li><a href="#">NewsPicks for Kids</a></li>
+              <li><a href="#">NewsPicks NewSchool</a></li>
+              <li><a href="#">NewsPicks Publishing</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3 class="footer-title">企業向けサービス</h3>
+            <ul class="footer-links">
+              <li><a href="#">NewsPicks Brand Design</a></li>
+              <li><a href="#">NewsPicks 法人グループ</a></li>
+              <li><a href="#">NewsPicks Learning</a></li>
+              <li><a href="#">NewsPicks Enterprise</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3 class="footer-title">その他サービス</h3>
+            <ul class="footer-links">
+              <li><a href="#">NewsPicks Expert</a></li>
+              <li><a href="#">NewsPicks Education</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="copyright">
+          <p>© 2024 NewsPicks, Inc. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

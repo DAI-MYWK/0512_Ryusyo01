@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>グループビジョン ～世界をつなぎ、未来を創る～ | 龍昇株式会社</title>
+    <link rel="stylesheet" href="../../css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
+    <style>
+      /* Vision Page Specific Styles */
+      .vision-hero {
+        position: relative;
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.4),
+            rgba(0, 0, 0, 0.4)
+          ),
+          url("../../img/service-img03.webp");
+        background-size: cover;
+        background-position: center;
+        height: 70vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: #fff;
+        margin-top: 80px;
+      }
+
+      .vision-hero__content {
+        max-width: 800px;
+        padding: 0 20px;
+        animation: fadeInUp 1s ease-out;
+      }
+
+      .vision-hero__title {
+        font-size: 4rem;
+        font-weight: var(--font-weight-bold);
+        margin-bottom: 20px;
+        line-height: 1.2;
+      }
+
+      .vision-hero__text {
+        font-size: 1.8rem;
+        line-height: 1.7;
+        margin-bottom: 30px;
+      }
+
+      .vision-section {
+        padding: 100px 0;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .vision-section:nth-child(even) {
+        background-color: var(--color-light);
+      }
+
+      .vision-header {
+        margin-bottom: 60px;
+        text-align: center;
+      }
+
+      .vision-title {
+        font-size: 3.2rem;
+        font-weight: var(--font-weight-bold);
+        color: var(--color-primary);
+        margin-bottom: 15px;
+        position: relative;
+        display: inline-block;
+      }
+
+      .vision-title::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 3px;
+        background-color: var(--color-secondary);
+      }
+
+      .vision-subtitle {
+        font-size: 1.8rem;
+        color: var(--color-gray);
+      }
+
+      .message-container {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 50px;
+      }
+
+      .message-image {
+        flex: 0 0 300px;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .message-image img {
+        width: 100%;
+        height: auto;
+        transition: transform 0.5s ease;
+      }
+
+      .message-image:hover img {
+        transform: scale(1.05);
+      }
+
+      .message-content {
+        flex: 1;
+        min-width: 300px;
+      }
+
+      .message-title {
+        font-size: 2.4rem;
+        font-weight: var(--font-weight-bold);
+        color: var(--color-primary);
+        margin-bottom: 20px;
+      }
+
+      .message-text {
+        font-size: 1.6rem;
+        line-height: 1.8;
+      }
+
+      .message-text p {
+        margin-bottom: 15px;
+      }
+
+      .mission-values {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 30px;
+        margin-top: 50px;
+      }
+
+      .mission-box {
+        flex: 1 0 100%;
+        background-color: #fff;
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .value-box {
+        flex: 1 0 calc(50% - 15px);
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .value-box:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .mission-title,
+      .value-title {
+        font-size: 2.2rem;
+        font-weight: var(--font-weight-bold);
+        color: var(--color-primary);
+        margin-bottom: 20px;
+        position: relative;
+        display: inline-block;
+      }
+
+      .mission-title::after,
+      .value-title::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width: 50px;
+        height: 3px;
+        background-color: var(--color-secondary);
+      }
+
+      .mission-text,
+      .value-text {
+        font-size: 1.6rem;
+        line-height: 1.7;
+      }
+
+      .group-companies {
+        margin-top: 80px;
+      }
+
+      .companies-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        margin-top: 40px;
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .company-card {
+        background-color: #fff;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .company-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .company-image {
+        height: 180px;
+        overflow: hidden;
+        flex: 0 0 180px;
+      }
+
+      .company-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .company-card:hover .company-image img {
+        transform: scale(1.05);
+      }
+
+      .company-content {
+        padding: 25px;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .company-name {
+        font-size: 2rem;
+        font-weight: var(--font-weight-bold);
+        color: var(--color-primary);
+        margin-bottom: 15px;
+      }
+
+      .company-text {
+        font-size: 1.5rem;
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
+
+      .synergy-container {
+        margin-top: 60px;
+        text-align: center;
+      }
+
+      .synergy-title {
+        font-size: 2.4rem;
+        font-weight: var(--font-weight-bold);
+        color: var(--color-primary);
+        margin-bottom: 30px;
+      }
+
+      .synergy-text {
+        font-size: 1.6rem;
+        line-height: 1.7;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .fade-up {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+        animation: fadeInSafety 1s forwards 0.5s;
+      }
+
+      .slide-in-left {
+        opacity: 0;
+        transform: translateX(-50px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+        animation: fadeInSafety 1s forwards 0.5s;
+      }
+
+      .slide-in-right {
+        opacity: 0;
+        transform: translateX(50px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+        animation: fadeInSafety 1s forwards 0.5s;
+      }
+
+      .stagger-item {
+        opacity: 0;
+        transform: translateY(30px);
+        animation: fadeInSafety 1s forwards 0.5s;
+      }
+
+      .fade-in {
+        opacity: 1;
+        transform: translate(0, 0);
+        animation: none;
+      }
+
+      .swiper-container {
+        margin-top: 50px;
+        padding-bottom: 50px;
+      }
+
+      .swiper-pagination-bullet-active {
+        background-color: var(--color-primary);
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeInSafety {
+        to {
+          opacity: 1;
+          transform: translate(0, 0);
+        }
+      }
+
+      @media screen and (max-width: 768px) {
+        .vision-hero__title {
+          font-size: 3.2rem;
+        }
+
+        .vision-hero__text {
+          font-size: 1.6rem;
+        }
+
+        .vision-title {
+          font-size: 2.8rem;
+        }
+
+        .mission-box,
+        .value-box {
+          flex: 1 0 100%;
+          padding: 25px;
+        }
+
+        .message-container {
+          flex-direction: column;
+          gap: 30px;
+        }
+
+        .message-image {
+          flex: 0 0 100%;
+          max-width: 300px;
+          margin: 0 auto;
+        }
+
+        .companies-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ヘッダー -->
+    <header class="header js-header">
+      <div class="header__inner">
+        <h1 class="header__logo">
+          <a href="../../"
+            ><img src="../../img/header-logo1.png" alt="龍昇株式会社"
+          /></a>
+        </h1>
+        <button class="header__hamburger js-hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+      <nav class="global-nav js-global-nav">
+        <ul class="global-nav__list">
+          <li class="global-nav__item">
+            <a href="../../#about"><span>企業理念</span>ABOUT</a>
+          </li>
+          <li class="global-nav__item">
+            <a href="../../#business"><span>事業内容</span>BUSINESS</a>
+          </li>
+          <li class="global-nav__item">
+            <a href="../../#company"><span>会社概要</span>COMPANY</a>
+          </li>
+          <li class="global-nav__item">
+            <a href="../../#contact"><span>お問い合わせ</span>CONTACT</a>
+          </li>
+          <li class="global-nav__item current">
+            <a href="../vision/"><span>グループビジョン</span>VISION</a>
+          </li>
+          <li class="global-nav__item">
+            <a href="../solutions/"><span>ソリューション</span>SOLUTIONS</a>
+          </li>
+          <li class="global-nav__item">
+            <a href="../recruit/"><span>採用・貢献</span>RECRUIT</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- ヒーローセクション -->
+    <section class="vision-hero">
+      <div class="vision-hero__content">
+        <h2 class="vision-hero__title">グループビジョン</h2>
+        <p class="vision-hero__text">
+          私たちは、世界と人々の暮らしをつなぐ架け橋となり、豊かな未来を築きます。
+          グローバルな視点と地域密着の姿勢をあわせ持ち、価値ある新しいビジネスを生み出すのが、龍昇株式会社グループの使命です。
+        </p>
+      </div>
+    </section>
+
+    <!-- メインコンテンツ -->
+    <main>
+      <!-- 代表メッセージ -->
+      <section class="vision-section">
+        <div class="container">
+          <div class="vision-header">
+            <h2 class="vision-title fade-up">代表メッセージ</h2>
+            <p class="vision-subtitle fade-up">グループCEOからの挨拶</p>
+          </div>
+
+          <div class="message-container">
+            <div class="message-image slide-in-left">
+              <img
+                src="../../img/service-img02.webp"
+                alt="代表取締役 津本 龍"
+              />
+            </div>
+            <div class="message-content slide-in-right">
+              <h3 class="message-title">未来を見据えた挑戦</h3>
+              <div class="message-text">
+                <p>
+                  龍昇株式会社は、輸入貿易・物流・EC販売・越境サポートなど、4つの専門性を持ったグループ企業を統括しています。私たちが目指すのは、『世界をつなぎ、人々の暮らしをより豊かにする』という想いを形にすること。
+                </p>
+                <p>
+                  各社が培ってきたノウハウとネットワークを組み合わせ、ビジネスの可能性を大きく拡張することで、新たな価値創造を実現します。グローバル化が進む現代社会において、海外の優れた商品を日本のお客様に、また日本の質の高いサービスを海外へ届けるなど、双方向の橋渡し役として成長を続けてまいりました。
+                </p>
+                <p>
+                  これからも挑戦を恐れず、新たなテクノロジーやアイデアを取り入れながら、さらなる発展と社会への貢献を目指します。人々の生活がより便利に、豊かになるよう、龍昇株式会社グループは日々前進し続けます。
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ミッション・バリュー -->
+      <section class="vision-section">
+        <div class="container">
+          <div class="vision-header">
+            <h2 class="vision-title fade-up">グループ理念</h2>
+            <p class="vision-subtitle fade-up">ミッション・バリュー</p>
+          </div>
+
+          <div class="mission-values">
+            <div class="mission-box fade-up">
+              <h3 class="mission-title">ミッション</h3>
+              <p class="mission-text">
+                アジアと日本、そして世界のあらゆる人々に対して、より自由で豊かな選択肢を提供し、経済・文化の交流を促進することで持続可能な未来に貢献する。
+              </p>
+            </div>
+
+            <div class="value-box stagger-item">
+              <h3 class="value-title">オープンマインド</h3>
+              <p class="value-text">
+                異文化や新しいアイデアを積極的に取り入れ、枠にとらわれない発想を大切にします。国籍や言語の壁を超えて協働し、イノベーションを生み出します。
+              </p>
+            </div>
+
+            <div class="value-box stagger-item">
+              <h3 class="value-title">スピード＆フレキシビリティ</h3>
+              <p class="value-text">
+                刻々と変化する時代の潮流を捉え、迅速な判断と行動を重視します。既存の仕組みにとらわれず柔軟に対応し、お客様の期待を超えるサービスを提供します。
+              </p>
+            </div>
+
+            <div class="value-box stagger-item">
+              <h3 class="value-title">パートナーシップ</h3>
+              <p class="value-text">
+                社員同士、取引先、地域社会、そして世界のステークホルダーとの信頼関係を何より重視します。持続可能な発展のために、誠実かつ透明性をもって共に成長していきます。
+              </p>
+            </div>
+
+            <div class="value-box stagger-item">
+              <h3 class="value-title">クオリティファースト</h3>
+              <p class="value-text">
+                各社の強みを活かしつつ、高品質の商品やサービスを追求します。海外から国内への商品提供においては安全性や品質管理を徹底し、お客様の満足度を最優先にします。
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- グループ概要 -->
+      <section class="vision-section">
+        <div class="container">
+          <div class="vision-header">
+            <h2 class="vision-title fade-up">グループ概要</h2>
+            <p class="vision-subtitle fade-up">4社の連携による新たな価値創造</p>
+          </div>
+
+          <div class="group-companies">
+            <div class="companies-grid">
+              <div class="company-card stagger-item">
+                <div class="company-image">
+                  <img src="../../img/service-img03.webp" alt="Axia" />
+                </div>
+                <div class="company-content">
+                  <h3 class="company-name">Axia</h3>
+                  <p class="company-text">
+                    海外の魅力ある商品を日本へ届ける輸入貿易のエキスパート。厳選サプライヤーからの直接買付により品質と価格を両立し、迅速な調達を実現しています。
+                  </p>
+                </div>
+              </div>
+
+              <div class="company-card stagger-item">
+                <div class="company-image">
+                  <img src="../../img/service-img04.webp" alt="KRET" />
+                </div>
+                <div class="company-content">
+                  <h3 class="company-name">KRET</h3>
+                  <p class="company-text">
+                    関東圏内の物流・在庫管理、さらにグローバル人材支援で事業を支えるプロフェッショナル。スピーディーな物流体制と高い配送品質を提供します。
+                  </p>
+                </div>
+              </div>
+
+              <div class="company-card stagger-item">
+                <div class="company-image">
+                  <img
+                    src="../../img/service-img05.webp"
+                    alt="えにしショップ"
+                  />
+                </div>
+                <div class="company-content">
+                  <h3 class="company-name">えにしショップ</h3>
+                  <p class="company-text">
+                    女性向けを中心とした小物雑貨のEC展開や越境ECのノウハウを保有。国内外のトレンドをいち早く取り入れ、1,000点以上の商品を常時在庫しています。
+                  </p>
+                </div>
+              </div>
+
+              <div class="company-card stagger-item">
+                <div class="company-image">
+                  <img src="../../img/service-img06.webp" alt="FeLiCe" />
+                </div>
+                <div class="company-content">
+                  <h3 class="company-name">FeLiCe</h3>
+                  <p class="company-text">
+                    中国市場と日本市場を結び、卸販売・貿易で活躍する架け橋的存在。中国現地ネットワークを活かし、現地調達から輸入通関、国内卸・小売までをワンストップで提供します。
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="synergy-container fade-up">
+              <h3 class="synergy-title">グループシナジー</h3>
+              <p class="synergy-text">
+                海外調達から国内での流通・販売、さらにはEC運営まで、一気通貫でサポートできる点が当グループ最大の強みです。各事業会社が連携しながら商品やサービスを提供することで、新しいマーケット機会を創造し、お客様に最適な価値をお届けします。
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- バリュースライダー -->
+      <section class="vision-section">
+        <div class="container">
+          <div class="vision-header">
+            <h2 class="vision-title fade-up">私たちの強み</h2>
+            <p class="vision-subtitle fade-up">お客様に提供する価値</p>
+          </div>
+
+          <div class="swiper-container">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="value-box">
+                  <h3 class="value-title">グローバルネットワーク</h3>
+                  <p class="value-text">
+                    アジアを中心とした海外サプライヤーや物流ネットワークを活かし、グローバルなビジネス展開をサポートします。国際的な視点と経験を持つスタッフが、お客様のニーズに合わせた最適なソリューションを提案します。
+                  </p>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="value-box">
+                  <h3 class="value-title">一気通貫サービス</h3>
+                  <p class="value-text">
+                    商品調達、物流、販売、マーケティングまで一貫したサービスを提供。複数の企業と取引する手間を省き、効率的なビジネス運営を実現します。物流と販売を連携させることで、リードタイムの短縮も可能です。
+                  </p>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="value-box">
+                  <h3 class="value-title">多様な人材と知見</h3>
+                  <p class="value-text">
+                    多国籍のスタッフが在籍し、様々な文化や市場への深い理解を持っています。多様な視点や専門知識を活かした革新的なアイデアやソリューションを生み出す環境を整え、お客様のビジネス成長に貢献します。
+                  </p>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="value-box">
+                  <h3 class="value-title">クオリティへのこだわり</h3>
+                  <p class="value-text">
+                    すべてのプロセスにおいて品質を最優先。商品の安全性や信頼性を徹底的に管理し、お客様に安心して利用いただけるサービスを提供します。継続的な改善活動を通じて、サービス品質の向上に努めています。
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- フッター -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__inner">
+          <div class="footer__info">
+            <div class="footer__logo">
+              <img src="../../img/footer-logo1.png" alt="龍昇株式会社" />
+            </div>
+            <p class="footer__company-name">龍昇株式会社</p>
+            <p class="footer__company-address">
+              〒336-0042 埼玉県さいたま市南区大谷口625-3
+            </p>
+          </div>
+          <div class="footer__nav">
+            <ul class="footer__nav-list">
+              <li><a href="../../#about">企業理念</a></li>
+              <li><a href="../../#business">事業内容</a></li>
+              <li><a href="../../#company">会社概要</a></li>
+              <li><a href="../../#contact">お問い合わせ</a></li>
+              <li><a href="../vision/">グループビジョン</a></li>
+              <li><a href="../solutions/">ソリューション</a></li>
+              <li><a href="../recruit/">採用・貢献</a></li>
+            </ul>
+          </div>
+        </div>
+        <p class="footer__copyright">
+          &copy; 2024 Ryu-Syou Co., Ltd. All Rights Reserved.
+        </p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script>
+      // ヘッダーナビゲーション
+      const hamburger = document.querySelector(".js-hamburger");
+      const globalNav = document.querySelector(".js-global-nav");
+      const header = document.querySelector(".js-header");
+
+      hamburger.addEventListener("click", function () {
+        this.classList.toggle("is-active");
+        globalNav.classList.toggle("is-active");
+      });
+
+      window.addEventListener("scroll", function () {
+        if (window.scrollY > 50) {
+          header.classList.add("is-scrolled");
+        } else {
+          header.classList.remove("is-scrolled");
+        }
+      });
+
+      // スクロールアニメーション
+      const fadeUpElements = document.querySelectorAll(".fade-up");
+      const slideLeftElements = document.querySelectorAll(".slide-in-left");
+      const slideRightElements = document.querySelectorAll(".slide-in-right");
+      const staggerItems = document.querySelectorAll(".stagger-item");
+
+      const observer = new IntersectionObserver(
+        (entries, observer) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("fade-in");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          root: null,
+          rootMargin: "0px 0px -100px 0px",
+          threshold: 0.01,
+        }
+      );
+
+      fadeUpElements.forEach((element) => {
+        observer.observe(element);
+      });
+
+      slideLeftElements.forEach((element) => {
+        observer.observe(element);
+      });
+
+      slideRightElements.forEach((element) => {
+        observer.observe(element);
+      });
+
+      // スタガーアニメーション（遅延表示）
+      staggerItems.forEach((item, index) => {
+        item.style.transitionDelay = `${index * 0.1}s`;
+        observer.observe(item);
+      });
+
+      // Swiperの初期化
+      const swiper = new Swiper(".swiper-container", {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        breakpoints: {
+          640: {
+            slidesPerView: 1,
+            spaceBetween: 20,
+          },
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 30,
+          },
+          1024: {
+            slidesPerView: 2,
+            spaceBetween: 30,
+          },
+        },
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false,
+        },
+      });
+    </script>
+  </body>
+</html>

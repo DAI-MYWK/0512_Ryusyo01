@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      人と社会を未来へつなぐ ～採用・パートナーシップ・社会貢献～ | 龍昇株式会社
+    </title>
+    <link rel="stylesheet" href="../../css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
+    <style>
+      /* Recruit Page Specific Styles */
+      .recruit-hero {
+        position: relative;
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)
+          ),
+          url("../../img/service-img05.webp");
+        background-size: cover;
+        background-position: center;
+        height: 70vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: #fff;
+        margin-top: 80px;
+      }
+
+      .recruit-hero__content {
+        max-width: 800px;
+        padding: 0 20px;
+        animation: fadeInUp 1s ease-out;
+      }
+
+      .recruit-hero__title {
+        font-size: 4rem;
+        font-weight: var(--font-weight-bold);
+        margin-bottom: 20px;
+        line-height: 1.2;
+      }
+
+      .recruit-hero__text {
+        font-size: 1.8rem;
+        line-height: 1.7;
+        margin-bottom: 30px;
+      }
+
+      .recruit-section {
+        padding: 100px 0;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .recruit-section:nth-child(even) {
+        background-color: var(--color-light);
+      }
+
+      .recruit-header {
+        margin-bottom: 60px;
+        text-align: center;
+      }
+
+      .recruit-title {
+        font-size: 3.2rem;
+        font-weight: var(--font-weight-bold);
+        color: var(--color-primary);
+        margin-bottom: 15px;
+        position: relative;
+        display: inline-block;
+      }
+
+      .recruit-title::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 3px;
+        background-color: var(--color-secondary);
+      }
+
+      .recruit-subtitle {
+        font-size: 1.8rem;
+        color: var(--color-gray);
+      }
+
+      .recruit-content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        margin-top: 30px;
+      }
+
+      .recruit-image {
+        flex: 0 0 450px;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .recruit-image img {
+        width: 100%;
+        height: auto;
+        transition: transform 0.5s ease;
+      }
+
+      .recruit-text {
+        flex: 1;
+        min-width: 300px;
+      }
+
+      .recruit-text-title {
+        font-size: 2.4rem;
+        font-weight: var(--font-weight-bold);
+        color: var(--color-primary);
+        margin-bottom: 20px;
+      }
+
+      .recruit-text-desc {
+        font-size: 1.6rem;
+        line-height: 1.8;
+        margin-bottom: 25px;
+      }
+
+      .job-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 30px;
+        margin-top: 40px;
+      }
+
+      .job-card {
+        background-color: #fff;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .job-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .job-card-header {
+        background-color: var(--color-primary);
+        color: #fff;
+        padding: 15px 20px;
+      }
+
+      .job-card-title {
+        font-size: 1.8rem;
+        font-weight: var(--font-weight-bold);
+      }
+
+      .job-card-body {
+        padding: 25px;
+      }
+
+      .job-card-desc {
+        font-size: 1.5rem;
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
+
+      .job-requirements {
+        margin-top: 20px;
+      }
+
+      .job-requirement {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 15px;
+      }
+
+      .requirement-icon {
+        color: var(--color-primary);
+        margin-right: 15px;
+        font-size: 1.8rem;
+        flex-shrink: 0;
+      }
+
+      .requirement-text {
+        flex: 1;
+        font-size: 1.5rem;
+        line-height: 1.6;
+      }
+
+      .partner-types {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 30px;
+        margin-top: 30px;
+      }
+
+      .partner-type {
+        flex: 1 0 calc(33.333% - 20px);
+        min-width: 250px;
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .partner-type:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .partner-type-title {
+        font-size: 2rem;
+        font-weight: var(--font-weight-bold);
+        color: var(--color-primary);
+        margin-bottom: 20px;
+        position: relative;
+        padding-left: 20px;
+      }
+
+      .partner-type-title::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 8px;
+        width: 5px;
+        height: 20px;
+        background-color: var(--color-primary);
+      }
+
+      .partner-type-desc {
+        font-size: 1.5rem;
+        line-height: 1.7;
+      }
+
+      .sdgs-items {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 50px;
+        margin-top: 50px;
+      }
+
+      .sdgs-item {
+        flex: 0 0 calc(50% - 25px);
+        min-width: 300px;
+        display: flex;
+        gap: 30px;
+      }
+
+      .sdgs-icon {
+        flex: 0 0 80px;
+        height: 80px;
+        background-color: var(--color-primary);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 3rem;
+      }
+
+      .sdgs-content {
+        flex: 1;
+      }
+
+      .sdgs-title {
+        font-size: 2rem;
+        font-weight: var(--font-weight-bold);
+        color: var(--color-primary);
+        margin-bottom: 15px;
+      }
+
+      .sdgs-desc {
+        font-size: 1.5rem;
+        line-height: 1.7;
+      }
+
+      .future-vision {
+        margin-top: 60px;
+        padding: 40px;
+        background-color: #f8f8f8;
+        border-radius: 10px;
+        text-align: center;
+      }
+
+      .future-title {
+        font-size: 2.4rem;
+        font-weight: var(--font-weight-bold);
+        color: var(--color-primary);
+        margin-bottom: 25px;
+      }
+
+      .future-text {
+        font-size: 1.6rem;
+        line-height: 1.8;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .cta-container {
+        text-align: center;
+        margin-top: 60px;
+        padding: 40px;
+        background-color: #f9f9f9;
+        border-radius: 10px;
+      }
+
+      .cta-title {
+        font-size: 2.4rem;
+        font-weight: var(--font-weight-bold);
+        color: var(--color-primary);
+        margin-bottom: 20px;
+      }
+
+      .cta-text {
+        font-size: 1.6rem;
+        line-height: 1.7;
+        margin-bottom: 30px;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .cta-button {
+        display: inline-block;
+        background-color: var(--color-primary);
+        color: white;
+        padding: 15px 50px;
+        border-radius: 50px;
+        font-size: 1.6rem;
+        font-weight: var(--font-weight-bold);
+        transition: all 0.3s ease;
+      }
+
+      .cta-button:hover {
+        background-color: #c0392b;
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .fade-up {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+        animation: fadeInSafety 1s forwards 0.5s;
+      }
+
+      .fade-in-right {
+        opacity: 0;
+        transform: translateX(50px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+        animation: fadeInSafety 1s forwards 0.5s;
+      }
+
+      .fade-in-left {
+        opacity: 0;
+        transform: translateX(-50px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+        animation: fadeInSafety 1s forwards 0.5s;
+      }
+
+      .fade-in {
+        opacity: 1;
+        transform: translate(0, 0);
+        animation: none;
+      }
+
+      .stagger-item {
+        opacity: 0;
+        transform: translateY(30px);
+        animation: fadeInSafety 1s forwards 0.5s;
+      }
+
+      @keyframes fadeInSafety {
+        to {
+          opacity: 1;
+          transform: translate(0, 0);
+        }
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @media screen and (max-width: 768px) {
+        .recruit-hero__title {
+          font-size: 3.2rem;
+        }
+
+        .recruit-hero__text {
+          font-size: 1.6rem;
+        }
+
+        .recruit-title {
+          font-size: 2.8rem;
+        }
+
+        .recruit-content {
+          flex-direction: column;
+          gap: 40px;
+        }
+
+        .recruit-image {
+          flex: 0 0 100%;
+          max-width: 450px;
+          margin: 0 auto;
+        }
+
+        .sdgs-items {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .sdgs-item {
+          flex: 0 0 100%;
+        }
+
+        .partner-type {
+          flex: 1 0 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ヘッダー -->
+    <header class="header js-header">
+      <div class="header__inner">
+        <h1 class="header__logo">
+          <a href="../../"
+            ><img src="../../img/header-logo1.png" alt="龍昇株式会社"
+          /></a>
+        </h1>
+        <button class="header__hamburger js-hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+      <nav class="global-nav js-global-nav">
+        <ul class="global-nav__list">
+          <li class="global-nav__item">
+            <a href="../../#about"><span>企業理念</span>ABOUT</a>
+          </li>
+          <li class="global-nav__item">
+            <a href="../../#business"><span>事業内容</span>BUSINESS</a>
+          </li>
+          <li class="global-nav__item">
+            <a href="../../#company"><span>会社概要</span>COMPANY</a>
+          </li>
+          <li class="global-nav__item">
+            <a href="../../#contact"><span>お問い合わせ</span>CONTACT</a>
+          </li>
+          <li class="global-nav__item">
+            <a href="../vision/"><span>グループビジョン</span>VISION</a>
+          </li>
+          <li class="global-nav__item">
+            <a href="../solutions/"><span>ソリューション</span>SOLUTIONS</a>
+          </li>
+          <li class="global-nav__item current">
+            <a href="../recruit/"><span>採用・貢献</span>RECRUIT</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- ヒーローセクション -->
+    <section class="recruit-hero">
+      <div class="recruit-hero__content">
+        <h2 class="recruit-hero__title">人と社会を未来へつなぐ</h2>
+        <p class="recruit-hero__text">採用・パートナーシップ・社会貢献</p>
+      </div>
+    </section>
+
+    <!-- メインコンテンツ -->
+    <main>
+      <!-- 採用情報セクション -->
+      <section class="recruit-section">
+        <div class="container">
+          <div class="recruit-header">
+            <h2 class="recruit-title fade-up">採用情報</h2>
+            <p class="recruit-subtitle fade-up">グローバルに活躍できる環境</p>
+          </div>
+
+          <div class="recruit-content">
+            <div class="recruit-text fade-in-right" style="flex: 1 0 100%">
+              <h3 class="recruit-text-title">募集要項と魅力</h3>
+              <p class="recruit-text-desc">
+                私たちは、グローバルなビジネスシーンで活躍したい意欲を持つ人材を歓迎します。輸入貿易・EC運営・物流・人材支援など、幅広いフィールドがあるため、さまざまなキャリアパスを描くことが可能です。
+              </p>
+              <p class="recruit-text-desc">
+                社内には海外出身のメンバーも多く、多文化共生のチーム環境で働けるのが特徴です。自分のアイデアを積極的に提案し、新しいプロジェクトを生み出していくことができる自由度の高さも魅力です。
+              </p>
+              <p class="recruit-text-desc">
+                未経験者でも研修制度や先輩社員からのサポート体制が充実しているため、着実にスキルアップを図れます。
+              </p>
+              <h3 class="recruit-text-title">求める人物像</h3>
+              <p class="recruit-text-desc">
+                グローバル視点を持ち、学び続ける意欲がある方を求めます。また、自ら課題を見つけ出し、スピード感を持って行動できる方、チームワークを大切にしながらも自分の強みを発揮できる方は大歓迎です。
+              </p>
+            </div>
+          </div>
+
+          <div class="job-cards">
+            <div class="job-card stagger-item">
+              <div class="job-card-header">
+                <h3 class="job-card-title">海外営業・バイヤー</h3>
+              </div>
+              <div class="job-card-body">
+                <p class="job-card-desc">
+                  海外サプライヤーとの交渉や新規商材の発掘を担当。優れた商品を見極める目と、国際的なコミュニケーション能力が活かせる職種です。
+                </p>
+                <div class="job-requirements">
+                  <div class="job-requirement">
+                    <div class="requirement-icon">✓</div>
+                    <div class="requirement-text">
+                      英語または中国語でのコミュニケーションスキル
+                    </div>
+                  </div>
+                  <div class="job-requirement">
+                    <div class="requirement-icon">✓</div>
+                    <div class="requirement-text">
+                      商品の価値を見極める分析力
+                    </div>
+                  </div>
+                  <div class="job-requirement">
+                    <div class="requirement-icon">✓</div>
+                    <div class="requirement-text">海外出張に抵抗のない方</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="job-card stagger-item">
+              <div class="job-card-header">
+                <h3 class="job-card-title">ECマーケティング担当</h3>
+              </div>
+              <div class="job-card-body">
+                <p class="job-card-desc">
+                  自社ECサイトの運営やプロモーション戦略の立案・実行を担当。データ分析に基づいたマーケティング施策の企画・実行ができる方を求めています。
+                </p>
+                <div class="job-requirements">
+                  <div class="job-requirement">
+                    <div class="requirement-icon">✓</div>
+                    <div class="requirement-text">
+                      Web広告運用経験（未経験可）
+                    </div>
+                  </div>
+                  <div class="job-requirement">
+                    <div class="requirement-icon">✓</div>
+                    <div class="requirement-text">
+                      データ分析に基づいた意思決定能力
+                    </div>
+                  </div>
+                  <div class="job-requirement">
+                    <div class="requirement-icon">✓</div>
+                    <div class="requirement-text">トレンドに敏感な方</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="job-card stagger-item">
+              <div class="job-card-header">
+                <h3 class="job-card-title">物流管理スタッフ</h3>
+              </div>
+              <div class="job-card-body">
+                <p class="job-card-desc">
+                  商品の入出荷管理や在庫最適化を担当。システム導入による業務効率化にも取り組み、物流プロセス全体の改善を図ります。
+                </p>
+                <div class="job-requirements">
+                  <div class="job-requirement">
+                    <div class="requirement-icon">✓</div>
+                    <div class="requirement-text">
+                      物流・在庫管理の経験（未経験可）
+                    </div>
+                  </div>
+                  <div class="job-requirement">
+                    <div class="requirement-icon">✓</div>
+                    <div class="requirement-text">
+                      効率化を考えた業務改善能力
+                    </div>
+                  </div>
+                  <div class="job-requirement">
+                    <div class="requirement-icon">✓</div>
+                    <div class="requirement-text">
+                      チームワークを大切にできる方
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- パートナー募集セクション -->
+      <section class="recruit-section">
+        <div class="container">
+          <div class="recruit-header">
+            <h2 class="recruit-title fade-up">パートナー募集</h2>
+            <p class="recruit-subtitle fade-up">
+              共に成長するビジネスパートナー
+            </p>
+          </div>
+
+          <p
+            class="recruit-text-desc fade-up"
+            style="text-align: center; max-width: 800px; margin: 0 auto 40px"
+          >
+            新しいビジネスモデルを共に創り出す"ビジネスパートナー"を広く募集しています。龍昇株式会社グループとのコラボレーションで、新たな価値を生み出しませんか？
+          </p>
+
+          <div class="partner-types">
+            <div class="partner-type stagger-item">
+              <h3 class="partner-type-title">海外進出支援</h3>
+              <p class="partner-type-desc">
+                当グループが培った越境ECや輸入販売のノウハウが役立ちます。アジア市場への進出をお考えの日本企業様に対して、現地のマーケティング支援や適切な販路の開拓をサポートします。海外展開のリスクを最小限に抑えながら、グローバル展開を実現します。
+              </p>
+            </div>
+
+            <div class="partner-type stagger-item">
+              <h3 class="partner-type-title">国内流通強化</h3>
+              <p class="partner-type-desc">
+                KRETの物流ネットワークや、えにしショップのEC力を活かした新規販路開拓をサポート可能です。国内での販売チャネル拡大をお考えの企業様に対して、オンライン・オフライン両面でのマーケティング戦略を提案し、売上拡大を実現します。
+              </p>
+            </div>
+
+            <div class="partner-type stagger-item">
+              <h3 class="partner-type-title">新商材取扱</h3>
+              <p class="partner-type-desc">
+                Axia・FeLiCeのルートで厳選した海外商品や素材をいち早くご案内します。新商品の開発や品揃えの拡充をお考えの企業様に、オリジナリティの高い商材をご提案。独自性のある商品ラインナップで競争力を高めるお手伝いをします。
+              </p>
+            </div>
+          </div>
+
+          <p
+            class="recruit-text-desc fade-up"
+            style="text-align: center; max-width: 800px; margin: 40px auto 0"
+          >
+            私たちは柔軟な発想で協業の可能性を追求し、Win-Winの関係を築きたいと考えています。ぜひお気軽にご相談ください。
+          </p>
+        </div>
+      </section>
+
+      <!-- 社会貢献セクション -->
+      <section class="recruit-section">
+        <div class="container">
+          <div class="recruit-header">
+            <h2 class="recruit-title fade-up">社会貢献・SDGsへの取り組み</h2>
+            <p class="recruit-subtitle fade-up">持続可能な未来に向けて</p>
+          </div>
+
+          <div class="sdgs-items">
+            <div class="sdgs-item fade-up">
+              <div class="sdgs-icon">
+                <i>♻️</i>
+              </div>
+              <div class="sdgs-content">
+                <h3 class="sdgs-title">環境配慮・持続可能なビジネス運営</h3>
+                <p class="sdgs-desc">
+                  物流プロセスの最適化によって輸送時のCO2排出量削減に取り組んでいます。さらに、梱包資材や包装材料の見直し、環境に優しい素材への切り替えを進めるなど、エコフレンドリーな施策を積極的に推進しています。
+                </p>
+                <p class="sdgs-desc">
+                  海外から輸入する商材についても、信頼できるサプライヤーを厳選し、公正な取引や適正な労働環境が整備された工場とのみパートナーシップを結ぶなど、社会的責任を果たすための取り組みを怠りません。
+                </p>
+              </div>
+            </div>
+
+            <div class="sdgs-item fade-up">
+              <div class="sdgs-icon">
+                <i>🌏</i>
+              </div>
+              <div class="sdgs-content">
+                <h3 class="sdgs-title">地域社会との連携・国際交流支援</h3>
+                <p class="sdgs-desc">
+                  地元・埼玉県でのイベントや産業振興プロジェクトに参加し、地域の活性化に貢献しています。KRETのグローバル人材支援を活用し、外国人労働者と地域社会を結びつけるイベントや日本語学習支援活動なども企画しています。
+                </p>
+                <p class="sdgs-desc">
+                  また、学生インターンシップ受け入れを通じ、次世代を担う若者たちのキャリア形成をサポート。海外の大学とも連携し、留学生インターンの受け入れや現地研修プログラムなど、国際色豊かな学びの場を提供しています。
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="future-vision fade-up">
+            <h3 class="future-title">未来へ向けたビジョン</h3>
+            <p class="future-text">
+              私たちはビジネスを通じて世界と地域をつなぎ、多様性と持続可能性を兼ね備えた明るい未来を創造したいと考えています。今後も環境保護、地域貢献、教育支援などに積極的に取り組み、社会と共に成長し続ける企業グループを目指します。
+            </p>
+          </div>
+
+          <div class="swiper-container sdgs-swiper" style="margin-top: 50px">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img
+                  src="../../img/service-img04.webp"
+                  alt="社会貢献活動1"
+                  style="
+                    width: 100%;
+                    border-radius: 10px;
+                    height: 250px;
+                    object-fit: cover;
+                  "
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="../../img/service-img02.webp"
+                  alt="社会貢献活動2"
+                  style="
+                    width: 100%;
+                    border-radius: 10px;
+                    height: 250px;
+                    object-fit: cover;
+                  "
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="../../img/service-img05.webp"
+                  alt="社会貢献活動3"
+                  style="
+                    width: 100%;
+                    border-radius: 10px;
+                    height: 250px;
+                    object-fit: cover;
+                  "
+                />
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="recruit-section">
+        <div class="container">
+          <div class="cta-container fade-up">
+            <h2 class="cta-title">エントリー・お問い合わせ</h2>
+            <p class="cta-text">
+              採用に興味をお持ちの方、パートナーシップや社会貢献活動で連携を検討されている方は、専用フォームまたはお電話からお気軽にお問い合わせください。皆様と新たな未来を共創できる日を心よりお待ちしております。
+              一緒に世界をつなぎ、より良い社会を築いていきましょう。
+            </p>
+            <a href="../../#contact" class="cta-button">お問い合わせはこちら</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- フッター -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__inner">
+          <div class="footer__info">
+            <div class="footer__logo">
+              <img src="../../img/footer-logo1.png" alt="龍昇株式会社" />
+            </div>
+            <p class="footer__company-name">龍昇株式会社</p>
+            <p class="footer__company-address">
+              〒336-0042 埼玉県さいたま市南区大谷口625-3
+            </p>
+          </div>
+          <div class="footer__nav">
+            <ul class="footer__nav-list">
+              <li><a href="../../#about">企業理念</a></li>
+              <li><a href="../../#business">事業内容</a></li>
+              <li><a href="../../#company">会社概要</a></li>
+              <li><a href="../../#contact">お問い合わせ</a></li>
+              <li><a href="../vision/">グループビジョン</a></li>
+              <li><a href="../solutions/">ソリューション</a></li>
+              <li><a href="../recruit/">採用・貢献</a></li>
+            </ul>
+          </div>
+        </div>
+        <p class="footer__copyright">
+          &copy; 2024 Ryu-Syou Co., Ltd. All Rights Reserved.
+        </p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script>
+      // ヘッダーナビゲーション
+      const hamburger = document.querySelector(".js-hamburger");
+      const globalNav = document.querySelector(".js-global-nav");
+      const header = document.querySelector(".js-header");
+
+      hamburger.addEventListener("click", function () {
+        this.classList.toggle("is-active");
+        globalNav.classList.toggle("is-active");
+      });
+
+      window.addEventListener("scroll", function () {
+        if (window.scrollY > 50) {
+          header.classList.add("is-scrolled");
+        } else {
+          header.classList.remove("is-scrolled");
+        }
+      });
+
+      // スクロールアニメーション
+      const fadeUpElements = document.querySelectorAll(".fade-up");
+      const fadeInLeftElements = document.querySelectorAll(".fade-in-left");
+      const fadeInRightElements = document.querySelectorAll(".fade-in-right");
+      const staggerItems = document.querySelectorAll(".stagger-item");
+
+      const observer = new IntersectionObserver(
+        (entries, observer) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("fade-in");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          root: null,
+          rootMargin: "0px 0px -100px 0px",
+          threshold: 0.01,
+        }
+      );
+
+      fadeUpElements.forEach((element) => {
+        observer.observe(element);
+      });
+
+      fadeInLeftElements.forEach((element) => {
+        observer.observe(element);
+      });
+
+      fadeInRightElements.forEach((element) => {
+        observer.observe(element);
+      });
+
+      // スタガーアニメーション（遅延表示）
+      staggerItems.forEach((item, index) => {
+        item.style.transitionDelay = `${index * 0.1}s`;
+        observer.observe(item);
+      });
+
+      // パートナーシップスライダー
+      const partnerSwiper = new Swiper(".partner-swiper", {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        autoplay: {
+          delay: 4000,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        breakpoints: {
+          640: {
+            slidesPerView: 1,
+          },
+          768: {
+            slidesPerView: 2,
+          },
+          1024: {
+            slidesPerView: 3,
+          },
+        },
+      });
+
+      // SDGsスライダー
+      const sdgsSwiper = new Swiper(".sdgs-swiper", {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        breakpoints: {
+          640: {
+            slidesPerView: 1,
+          },
+          768: {
+            slidesPerView: 2,
+          },
+          1024: {
+            slidesPerView: 3,
+          },
+        },
+      });
+
+      // ヒーローセクションのパララックス効果
+      const heroSection = document.querySelector(".recruit-hero");
+      window.addEventListener("scroll", function () {
+        const scrollPosition = window.pageYOffset;
+        heroSection.style.backgroundPositionY = scrollPosition * 0.5 + "px";
+      });
+
+      // カウントアップアニメーション
+      function animateValue(obj, start, end, duration) {
+        let startTimestamp = null;
+        const step = (timestamp) => {
+          if (!startTimestamp) startTimestamp = timestamp;
+          const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+          obj.innerHTML = Math.floor(progress * (end - start) + start);
+          if (progress < 1) {
+            window.requestAnimationFrame(step);
+          }
+        };
+        window.requestAnimationFrame(step);
+      }
+
+      // ページ内リンクスムーススクロール
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          const targetId = this.getAttribute("href");
+          if (targetId === "#") return;
+
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            const headerHeight = document.querySelector("header").offsetHeight;
+            const targetPosition =
+              targetElement.getBoundingClientRect().top +
+              window.pageYOffset -
+              headerHeight;
+
+            window.scrollTo({
+              top: targetPosition,
+              behavior: "smooth",
+            });
+
+            // ハンバーガーメニューが開いている場合は閉じる
+            if (globalNav.classList.contains("is-active")) {
+              hamburger.classList.remove("is-active");
+              globalNav.classList.remove("is-active");
+            }
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

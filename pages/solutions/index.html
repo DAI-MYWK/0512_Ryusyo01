@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      事業紹介・ソリューション ～4つの法人が生み出す新たな価値～ | 龍昇株式会社
+    </title>
+    <link rel="stylesheet" href="../../css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
+    <style>
+      /* Solutions Page Specific Styles */
+      .solutions-hero {
+        position: relative;
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)
+          ),
+          url("../../img/service-img07.webp");
+        background-size: cover;
+        background-position: center;
+        height: 70vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: #fff;
+        margin-top: 80px;
+      }
+
+      .solutions-hero__content {
+        max-width: 800px;
+        padding: 0 20px;
+        animation: fadeInUp 1s ease-out;
+      }
+
+      .solutions-hero__title {
+        font-size: 4rem;
+        font-weight: var(--font-weight-bold);
+        margin-bottom: 20px;
+        line-height: 1.2;
+      }
+
+      .solutions-hero__text {
+        font-size: 1.8rem;
+        line-height: 1.7;
+        margin-bottom: 30px;
+      }
+
+      .solutions-section {
+        padding: 100px 0;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .solutions-section:nth-child(even) {
+        background-color: var(--color-light);
+      }
+
+      .solutions-header {
+        margin-bottom: 60px;
+        text-align: center;
+      }
+
+      .solutions-title {
+        font-size: 3.2rem;
+        font-weight: var(--font-weight-bold);
+        color: var(--color-primary);
+        margin-bottom: 15px;
+        position: relative;
+        display: inline-block;
+      }
+
+      .solutions-title::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 3px;
+        background-color: var(--color-secondary);
+      }
+
+      .solutions-subtitle {
+        font-size: 1.8rem;
+        color: var(--color-gray);
+      }
+
+      .intro-text {
+        max-width: 800px;
+        margin: 0 auto 50px;
+        font-size: 1.7rem;
+        line-height: 1.8;
+        text-align: center;
+      }
+
+      .solutions-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 80px;
+        margin-top: 50px;
+      }
+
+      .solution-image {
+        flex: 0 0 400px;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .solution-image img {
+        width: 100%;
+        height: auto;
+        transition: transform 0.5s ease;
+      }
+
+      .solution-content {
+        flex: 1;
+        min-width: 300px;
+      }
+
+      .solution-title {
+        font-size: 2.4rem;
+        font-weight: var(--font-weight-bold);
+        color: var(--color-primary);
+        margin-bottom: 20px;
+        position: relative;
+        padding-left: 20px;
+      }
+
+      .solution-title::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 8px;
+        width: 6px;
+        height: 25px;
+        background-color: var(--color-primary);
+      }
+
+      .solution-text {
+        font-size: 1.6rem;
+        line-height: 1.8;
+        margin-bottom: 25px;
+      }
+
+      .solution-features {
+        margin-top: 25px;
+      }
+
+      .solution-feature {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 15px;
+      }
+
+      .feature-icon {
+        width: 40px;
+        height: 40px;
+        background-color: var(--color-primary);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: bold;
+        margin-right: 15px;
+        flex-shrink: 0;
+      }
+
+      .feature-text {
+        flex: 1;
+        font-size: 1.5rem;
+        line-height: 1.6;
+      }
+
+      .flow-container {
+        margin-top: 80px;
+      }
+
+      .flow-title {
+        font-size: 2.4rem;
+        font-weight: var(--font-weight-bold);
+        color: var(--color-primary);
+        margin-bottom: 40px;
+        text-align: center;
+      }
+
+      .flow-steps {
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+
+      .flow-steps::before {
+        content: "";
+        position: absolute;
+        top: 40px;
+        left: 50px;
+        right: 50px;
+        height: 3px;
+        background-color: var(--color-secondary);
+        z-index: 0;
+      }
+
+      .flow-step {
+        width: 18%;
+        position: relative;
+        text-align: center;
+        z-index: 1;
+      }
+
+      .step-number {
+        width: 80px;
+        height: 80px;
+        background-color: var(--color-primary);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 2.4rem;
+        font-weight: var(--font-weight-bold);
+        margin: 0 auto 20px;
+      }
+
+      .step-title {
+        font-size: 1.6rem;
+        font-weight: var(--font-weight-bold);
+        margin-bottom: 10px;
+      }
+
+      .step-text {
+        font-size: 1.4rem;
+        line-height: 1.5;
+      }
+
+      .testimonials {
+        margin-top: 80px;
+      }
+
+      .testimonial-card {
+        background-color: #fff;
+        border-radius: 10px;
+        padding: 30px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        margin-bottom: 20px;
+      }
+
+      .testimonial-text {
+        font-size: 1.6rem;
+        line-height: 1.7;
+        font-style: italic;
+        margin-bottom: 20px;
+        position: relative;
+        padding: 0 20px;
+      }
+
+      .testimonial-text::before,
+      .testimonial-text::after {
+        content: '"';
+        font-size: 4rem;
+        color: var(--color-secondary);
+        position: absolute;
+        opacity: 0.3;
+      }
+
+      .testimonial-text::before {
+        top: -20px;
+        left: -5px;
+      }
+
+      .testimonial-text::after {
+        bottom: -40px;
+        right: -5px;
+      }
+
+      .testimonial-author {
+        font-size: 1.4rem;
+        font-weight: var(--font-weight-bold);
+        text-align: right;
+      }
+
+      .cta-container {
+        text-align: center;
+        margin-top: 60px;
+        padding: 40px;
+        background-color: #f9f9f9;
+        border-radius: 10px;
+      }
+
+      .cta-title {
+        font-size: 2.4rem;
+        font-weight: var(--font-weight-bold);
+        color: var(--color-primary);
+        margin-bottom: 20px;
+      }
+
+      .cta-text {
+        font-size: 1.6rem;
+        line-height: 1.7;
+        margin-bottom: 30px;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .cta-button {
+        display: inline-block;
+        background-color: var(--color-primary);
+        color: white;
+        padding: 15px 50px;
+        border-radius: 50px;
+        font-size: 1.6rem;
+        font-weight: var(--font-weight-bold);
+        transition: all 0.3s ease;
+      }
+
+      .cta-button:hover {
+        background-color: #c0392b;
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .fade-up {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+        animation: fadeInSafety 1s forwards 0.5s;
+      }
+
+      .fade-in-right {
+        opacity: 0;
+        transform: translateX(50px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+        animation: fadeInSafety 1s forwards 0.5s;
+      }
+
+      .fade-in-left {
+        opacity: 0;
+        transform: translateX(-50px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+        animation: fadeInSafety 1s forwards 0.5s;
+      }
+
+      .fade-in {
+        opacity: 1;
+        transform: translate(0, 0);
+        animation: none;
+      }
+
+      .stagger-item {
+        opacity: 0;
+        transform: translateY(30px);
+        animation: fadeInSafety 1s forwards 0.5s;
+      }
+
+      .swiper-container {
+        margin-top: 50px;
+        padding-bottom: 50px;
+      }
+
+      .swiper-pagination-bullet-active {
+        background-color: var(--color-primary);
+      }
+
+      @keyframes fadeInSafety {
+        to {
+          opacity: 1;
+          transform: translate(0, 0);
+        }
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @media screen and (max-width: 768px) {
+        .solutions-hero__title {
+          font-size: 3.2rem;
+        }
+
+        .solutions-hero__text {
+          font-size: 1.6rem;
+        }
+
+        .solutions-title {
+          font-size: 2.8rem;
+        }
+
+        .solutions-container {
+          flex-direction: column;
+          gap: 40px;
+        }
+
+        .solution-image {
+          flex: 0 0 100%;
+          max-width: 400px;
+          margin: 0 auto;
+        }
+
+        .flow-steps {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .flow-steps::before {
+          left: 50%;
+          width: 3px;
+          height: 80%;
+          top: 50px;
+          right: auto;
+          transform: translateX(-50%);
+        }
+
+        .flow-step {
+          width: 100%;
+          max-width: 300px;
+          margin-bottom: 40px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ヘッダー -->
+    <header class="header js-header">
+      <div class="header__inner">
+        <h1 class="header__logo">
+          <a href="../../"
+            ><img src="../../img/header-logo1.png" alt="龍昇株式会社"
+          /></a>
+        </h1>
+        <button class="header__hamburger js-hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+      <nav class="global-nav js-global-nav">
+        <ul class="global-nav__list">
+          <li class="global-nav__item">
+            <a href="../../#about"><span>企業理念</span>ABOUT</a>
+          </li>
+          <li class="global-nav__item">
+            <a href="../../#business"><span>事業内容</span>BUSINESS</a>
+          </li>
+          <li class="global-nav__item">
+            <a href="../../#company"><span>会社概要</span>COMPANY</a>
+          </li>
+          <li class="global-nav__item">
+            <a href="../../#contact"><span>お問い合わせ</span>CONTACT</a>
+          </li>
+          <li class="global-nav__item">
+            <a href="../vision/"><span>グループビジョン</span>VISION</a>
+          </li>
+          <li class="global-nav__item current">
+            <a href="../solutions/"><span>ソリューション</span>SOLUTIONS</a>
+          </li>
+          <li class="global-nav__item">
+            <a href="../recruit/"><span>採用・貢献</span>RECRUIT</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- ヒーローセクション -->
+    <section class="solutions-hero">
+      <div class="solutions-hero__content">
+        <h2 class="solutions-hero__title">事業紹介・ソリューション</h2>
+        <p class="solutions-hero__text">
+          4つの法人が連携することで生まれる新たな価値。
+          海外調達から国内物流、EC販売、人材支援に至るまで多角的なサービスを提供します。
+        </p>
+      </div>
+    </section>
+
+    <!-- メインコンテンツ -->
+    <main>
+      <!-- イントロダクション -->
+      <section class="solutions-section">
+        <div class="container">
+          <div class="solutions-header">
+            <h2 class="solutions-title fade-up">ビジネスソリューション</h2>
+            <p class="solutions-subtitle fade-up">幅広いニーズに応える総合力</p>
+          </div>
+
+          <p class="intro-text fade-up">
+            龍昇株式会社グループは、海外調達から国内物流、EC販売、人材支援に至るまで多角的なサービスを展開しています。4つの法人がそれぞれの得意分野を持ち寄り、連携することで生まれるシナジーが最大の強みです。
+            商品調達や新規販路開拓にお悩みの企業様、販売チャネルを増やして売上拡大を目指したい事業者様に対して、最適なソリューションをワンストップでご提供いたします。
+          </p>
+
+          <div class="swiper-container">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img
+                  src="../../img/service-img03.webp"
+                  alt="商品調達イメージ"
+                  style="width: 100%; border-radius: 10px"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="../../img/service-img04.webp"
+                  alt="物流イメージ"
+                  style="width: 100%; border-radius: 10px"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="../../img/service-img05.webp"
+                  alt="EC販売イメージ"
+                  style="width: 100%; border-radius: 10px"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="../../img/service-img06.webp"
+                  alt="人材支援イメージ"
+                  style="width: 100%; border-radius: 10px"
+                />
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 海外調達・貿易サポート -->
+      <section class="solutions-section">
+        <div class="container">
+          <div class="solutions-header">
+            <h2 class="solutions-title fade-up">
+              各社の強みを活かしたソリューション
+            </h2>
+            <p class="solutions-subtitle fade-up">
+              それぞれの専門性による価値提供
+            </p>
+          </div>
+
+          <div class="solutions-container">
+            <div class="solution-image fade-in-left">
+              <img
+                src="../../img/service-img03.webp"
+                alt="海外調達・貿易サポート"
+              />
+            </div>
+            <div class="solution-content fade-in-right">
+              <h3 class="solution-title">海外調達・貿易サポート</h3>
+              <p class="solution-text">
+                輸入のプロであるAxiaと、中国～日本の架け橋を担うFeLiCeが協力することで、海外（特にアジア地域）での商材発掘や仕入れ、輸入手続きまでをスムーズにサポートします。
+              </p>
+              <p class="solution-text">
+                膨大な海外サプライヤーとのネットワークを活かし、『高品質でコストパフォーマンスの高い商品』を選定。輸入に際しての通関業務や品質チェック、価格交渉なども一括で対応できる点が強みです。新たな海外ブランドの日本進出を検討している企業様や、日用雑貨やアパレル分野で商品バリエーションを広げたい事業者様に最適なサービスを提供します。
+              </p>
+              <div class="solution-features">
+                <div class="solution-feature stagger-item">
+                  <div class="feature-icon">1</div>
+                  <div class="feature-text">
+                    厳選されたサプライヤーネットワークによる信頼性の高い調達
+                  </div>
+                </div>
+                <div class="solution-feature stagger-item">
+                  <div class="feature-icon">2</div>
+                  <div class="feature-text">
+                    海外現地スタッフによる品質管理・価格交渉
+                  </div>
+                </div>
+                <div class="solution-feature stagger-item">
+                  <div class="feature-icon">3</div>
+                  <div class="feature-text">
+                    通関から国内輸送までのワンストップサービス
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="solutions-container">
+            <div class="solution-content fade-in-left">
+              <h3 class="solution-title">ECサイト運営・セールスサポート</h3>
+              <p class="solution-text">
+                女性向けファッションアイテム・雑貨を中心に国内外のEC展開を行っている『えにしショップ』では、オンライン販売における集客・マーケティングのノウハウを蓄積しています。
+              </p>
+              <p class="solution-text">
+                国内だけでなく海外のトレンドをリサーチし、"いち早く人気アイテムを導入する"仕組みを構築。越境ECの知見を活かして、海外マーケットへ自社ブランドを展開する企業様のサポートも可能です。サイト構築・運営からプロモーション、ユーザーサポートまでをトータルで請け負い、売上の最大化を目指します。
+              </p>
+              <div class="solution-features">
+                <div class="solution-feature stagger-item">
+                  <div class="feature-icon">1</div>
+                  <div class="feature-text">
+                    EC販売の立ち上げから運営までの総合支援
+                  </div>
+                </div>
+                <div class="solution-feature stagger-item">
+                  <div class="feature-icon">2</div>
+                  <div class="feature-text">
+                    マーケティング戦略と販売促進施策の提案
+                  </div>
+                </div>
+                <div class="solution-feature stagger-item">
+                  <div class="feature-icon">3</div>
+                  <div class="feature-text">
+                    越境EC展開支援と国際マーケットへのアプローチ
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="solution-image fade-in-right">
+              <img
+                src="../../img/service-img05.webp"
+                alt="ECサイト運営・セールスサポート"
+              />
+            </div>
+          </div>
+
+          <div class="solutions-container">
+            <div class="solution-image fade-in-left">
+              <img
+                src="../../img/service-img04.webp"
+                alt="物流・在庫管理・人材支援"
+              />
+            </div>
+            <div class="solution-content fade-in-right">
+              <h3 class="solution-title">物流・在庫管理・人材支援</h3>
+              <p class="solution-text">
+                関東圏の物流拠点を有するKRETは、発注から発送に至るまでの時間短縮を可能にし、EC事業者様の業務効率化を実現します。徹底した在庫管理システムにより欠品リスクを抑え、お客様が必要な時に必要な量を確保。
+              </p>
+              <p class="solution-text">
+                さらに、グローバル人材支援サービスも展開しており、物流現場やコールセンターなど、人手不足が懸念される分野に即戦力を供給できるのが特徴です。多様なバックグラウンドを持つ人材が活躍することで、新しい視点やアイデアも生まれやすく、企業の成長を後押しします。
+              </p>
+              <div class="solution-features">
+                <div class="solution-feature stagger-item">
+                  <div class="feature-icon">1</div>
+                  <div class="feature-text">
+                    館林・新狭山2拠点の物流センターによる効率的配送
+                  </div>
+                </div>
+                <div class="solution-feature stagger-item">
+                  <div class="feature-icon">2</div>
+                  <div class="feature-text">
+                    倉庫管理システムによる在庫の最適化
+                  </div>
+                </div>
+                <div class="solution-feature stagger-item">
+                  <div class="feature-icon">3</div>
+                  <div class="feature-text">
+                    グローバル人材の紹介と研修サポート
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- サービスフロー -->
+      <section class="solutions-section">
+        <div class="container">
+          <div class="solutions-header">
+            <h2 class="solutions-title fade-up">
+              グループ横断のサービスフロー
+            </h2>
+            <p class="solutions-subtitle fade-up">一気通貫のビジネスサポート</p>
+          </div>
+
+          <div class="flow-container">
+            <div class="flow-steps">
+              <div class="flow-step stagger-item">
+                <div class="step-number">1</div>
+                <h3 class="step-title">海外市場リサーチ</h3>
+                <p class="step-text">
+                  海外の展示会・市場調査を通じ、ニーズやトレンドを踏まえて適切な商品を選定します。
+                </p>
+              </div>
+              <div class="flow-step stagger-item">
+                <div class="step-number">2</div>
+                <h3 class="step-title">商品調達・輸入</h3>
+                <p class="step-text">
+                  バイヤーによる価格交渉・工場訪問・品質管理などを徹底し、スムーズな輸入を実現します。
+                </p>
+              </div>
+              <div class="flow-step stagger-item">
+                <div class="step-number">3</div>
+                <h3 class="step-title">倉庫・配送</h3>
+                <p class="step-text">
+                  商品の保管から発送体制の構築まで一貫して対応し、最短リードタイムでお客様に届けます。
+                </p>
+              </div>
+              <div class="flow-step stagger-item">
+                <div class="step-number">4</div>
+                <h3 class="step-title">EC販売・マーケティング</h3>
+                <p class="step-text">
+                  自社サイトやモールでの販促企画・広告運用を展開し、売上向上を狙います。
+                </p>
+              </div>
+              <div class="flow-step stagger-item">
+                <div class="step-number">5</div>
+                <h3 class="step-title">アフターサポート＆人材支援</h3>
+                <p class="step-text">
+                  返品交換やカスタマーサポート、コールセンター要員の確保など、事業の安定稼働をトータルバックアップします。
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <p class="intro-text fade-up" style="margin-top: 80px">
+            これらのフローをグループ全体で担うことで、海外から国内市場まで、一気通貫のビジネス支援を可能にしています。企業規模や業種を問わず、多彩なニーズに合わせてフレキシブルにご提案いたします。
+          </p>
+        </div>
+      </section>
+
+      <!-- お客様の声 -->
+      <section class="solutions-section">
+        <div class="container">
+          <div class="solutions-header">
+            <h2 class="solutions-title fade-up">お客様の声</h2>
+            <p class="solutions-subtitle fade-up">ご利用企業様からの評価</p>
+          </div>
+
+          <div class="testimonials">
+            <div class="swiper-container testimonial-swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="testimonial-card">
+                    <p class="testimonial-text">
+                      導入後、在庫差異がほぼゼロに。物流コストも10％削減できました。海外調達と国内配送が一括で対応できることで、社内リソースの効率化にも大いに貢献しています。
+                    </p>
+                    <p class="testimonial-author">日用品メーカーA社</p>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="testimonial-card">
+                    <p class="testimonial-text">
+                      突然のECセールにも即日2万件出荷対応。非常に頼りになります。繁忙期と閑散期の波がある業種ですが、柔軟に対応いただけるのでビジネスの成長を安心して計画できます。
+                    </p>
+                    <p class="testimonial-author">アパレルB社</p>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="testimonial-card">
+                    <p class="testimonial-text">
+                      海外商品の調達で悩んでいましたが、ピンポイントで希望に合った商材を見つけていただきました。越境ECのノウハウも教えていただき、売上が前年比150％になりました。
+                    </p>
+                    <p class="testimonial-author">雑貨輸入販売C社</p>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="testimonial-card">
+                    <p class="testimonial-text">
+                      人材不足に悩んでいたところ、グローバル人材支援サービスを利用。多様なバックグラウンドを持つスタッフが新しい視点をもたらし、社内の活性化にもつながりました。
+                    </p>
+                    <p class="testimonial-author">物流会社D社</p>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="solutions-section">
+        <div class="container">
+          <div class="cta-container fade-up">
+            <h2 class="cta-title">お問い合わせ・連携パートナー募集</h2>
+            <p class="cta-text">
+              上記ソリューションにご興味のある方、また共同でのビジネスチャンスを検討している企業様は、下記お問い合わせフォームよりお気軽にご連絡ください。龍昇株式会社グループ各社が連携し、最適なプランを提案させていただきます。
+            </p>
+            <a href="../../#contact" class="cta-button">お問い合わせはこちら</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- フッター -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__inner">
+          <div class="footer__info">
+            <div class="footer__logo">
+              <img src="../../img/footer-logo1.png" alt="龍昇株式会社" />
+            </div>
+            <p class="footer__company-name">龍昇株式会社</p>
+            <p class="footer__company-address">
+              〒336-0042 埼玉県さいたま市南区大谷口625-3
+            </p>
+          </div>
+          <div class="footer__nav">
+            <ul class="footer__nav-list">
+              <li><a href="../../#about">企業理念</a></li>
+              <li><a href="../../#business">事業内容</a></li>
+              <li><a href="../../#company">会社概要</a></li>
+              <li><a href="../../#contact">お問い合わせ</a></li>
+              <li><a href="../vision/">グループビジョン</a></li>
+              <li><a href="../solutions/">ソリューション</a></li>
+              <li><a href="../recruit/">採用・貢献</a></li>
+            </ul>
+          </div>
+        </div>
+        <p class="footer__copyright">
+          &copy; 2024 Ryu-Syou Co., Ltd. All Rights Reserved.
+        </p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script>
+      // ヘッダーナビゲーション
+      const hamburger = document.querySelector(".js-hamburger");
+      const globalNav = document.querySelector(".js-global-nav");
+      const header = document.querySelector(".js-header");
+
+      hamburger.addEventListener("click", function () {
+        this.classList.toggle("is-active");
+        globalNav.classList.toggle("is-active");
+      });
+
+      window.addEventListener("scroll", function () {
+        if (window.scrollY > 50) {
+          header.classList.add("is-scrolled");
+        } else {
+          header.classList.remove("is-scrolled");
+        }
+      });
+
+      // スクロールアニメーション
+      const fadeUpElements = document.querySelectorAll(".fade-up");
+      const fadeInLeftElements = document.querySelectorAll(".fade-in-left");
+      const fadeInRightElements = document.querySelectorAll(".fade-in-right");
+      const staggerItems = document.querySelectorAll(".stagger-item");
+
+      const observer = new IntersectionObserver(
+        (entries, observer) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("fade-in");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          root: null,
+          rootMargin: "0px 0px -100px 0px",
+          threshold: 0.01,
+        }
+      );
+
+      fadeUpElements.forEach((element) => {
+        observer.observe(element);
+      });
+
+      fadeInLeftElements.forEach((element) => {
+        observer.observe(element);
+      });
+
+      fadeInRightElements.forEach((element) => {
+        observer.observe(element);
+      });
+
+      // スタガーアニメーション（遅延表示）
+      staggerItems.forEach((item, index) => {
+        item.style.transitionDelay = `${index * 0.1}s`;
+        observer.observe(item);
+      });
+
+      // イントロスライダー
+      const swiper = new Swiper(".swiper-container", {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        breakpoints: {
+          640: {
+            slidesPerView: 1,
+          },
+          768: {
+            slidesPerView: 2,
+          },
+          1024: {
+            slidesPerView: 3,
+          },
+        },
+      });
+
+      // テスティモニアルスライダー
+      const testimonialSwiper = new Swiper(".testimonial-swiper", {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        breakpoints: {
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 30,
+          },
+        },
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false,
+        },
+      });
+
+      // ヒーローセクションのパララックス効果
+      const heroSection = document.querySelector(".solutions-hero");
+      window.addEventListener("scroll", function () {
+        const scrollPosition = window.pageYOffset;
+        heroSection.style.backgroundPositionY = scrollPosition * 0.5 + "px";
+      });
+    </script>
+  </body>
+</html>
